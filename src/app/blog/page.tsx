@@ -1,27 +1,20 @@
 import { getPosts } from "@/lib/posts";
-import Image from "next/image";
+import BlogPostCard from "@/components/BlogPostCard";
 
 export default async function BlogPage() {
   const posts = await getPosts();
 
-  console.log("POSTS are = " + JSON.stringify(posts));
-
   return (
-    <main>
-      <h1>Blog</h1>
+    <main className="mx-auto max-w-6xl px-6 py-12">
+      <h1 className="mb-8 text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+        Blog
+      </h1>
 
-      {posts.map((post: any) => (
-        <article key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.excerpt}</p>
-          <Image
-            src={post.feature_image}
-            width={500}
-            height={500}
-            alt="Picture of the author"
-          />
-        </article>
-      ))}
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {posts.map((post) => (
+          <BlogPostCard key={post.id} post={post} />
+        ))}
+      </div>
     </main>
   );
 }
