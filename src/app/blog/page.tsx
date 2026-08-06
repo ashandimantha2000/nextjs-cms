@@ -7,7 +7,7 @@ export default async function BlogPage() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
       <h1 className="mb-8 text-3xl font-bold text-neutral-900 dark:text-neutral-100">
-        Blog
+        All
       </h1>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">

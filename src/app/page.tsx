@@ -10,12 +10,12 @@ export default function page() {
         News
       </Link>
 
-      <Link href="/news" className="bg-amber-300 p-3 rounded-sm mr-2">
+      <Link href="/csr" className="bg-amber-300 p-3 rounded-sm mr-2">
         CSR Projects
       </Link>
 
       <Link href="/blog" className="bg-blue-900 p-3 rounded-sm mr-2">
-        Visit All Page
+        View All
       </Link>
     </div>
   );
