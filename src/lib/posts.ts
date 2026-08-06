@@ -20,3 +20,13 @@ export async function getPostBySlug(slug: string) {
       return null;
     });
 }
+
+export async function getPostFilered(tag: string, page = 1, limit = 10) {
+  return await api.posts.browse({
+    filter: `primary_tag:${tag}`,
+    include: ['tags', 'authors'],
+    limit,
+    page,
+  })
+
+}

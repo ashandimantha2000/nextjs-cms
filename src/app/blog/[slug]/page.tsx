@@ -62,10 +62,10 @@ export default async function BlogPostPage({
       </div>
 
       {post.feature_image && (
-        <div className="relative mt-8 w-full overflow-hidden rounded-2xl bg-neutral-200 dark:bg-neutral-800">
+        <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-2xl bg-neutral-200 dark:bg-neutral-800">
           <Image
             src={post.feature_image}
-            alt={post.feature_image_alt || post.title || ""}
+            alt={post.feature_image_alt || post.title || "imageee"}
             fill
             sizes="(max-width: 768px) 100vw, 768px"
             style={{ objectFit: "cover" }}
@@ -73,6 +73,7 @@ export default async function BlogPostPage({
         </div>
       )}
 
+      {/* all html from api get embedded here */}
       <div
         className="mt-8 space-y-4 text-neutral-700 [&_a]:text-blue-600 [&_a]:underline [&_figure]:my-6 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-neutral-900 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-neutral-900 [&_img]:rounded-xl dark:text-neutral-300 dark:[&_h2]:text-neutral-100 dark:[&_h3]:text-neutral-100"
         dangerouslySetInnerHTML={{ __html: post.html || "" }}
